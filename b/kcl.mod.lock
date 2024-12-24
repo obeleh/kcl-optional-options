@@ -1,0 +1,5 @@
+[dependencies]
+  [dependencies.a]
+    name = "a"
+    full_name = "a_0.0.1"
+    version = "0.0.1"
