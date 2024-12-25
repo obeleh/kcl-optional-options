@@ -42,3 +42,40 @@ if option('a_is_running', default=False):
       **generate_resources(read_options())
     }
 ```
+
+# Modpath
+
+this branch introduces:
+
+```kcl
+print(file.modpath())
+if file.modpath().endswith("a"):
+    {
+      **generate_resources(read_options())
+    }
+```
+
+For running `b` this works:
+
+```bash
+kcl run b -Y options.yaml
+```
+
+```yaml
+all_resources:
+- metadata:
+    namespace: app1
+- metadata:
+    namespace: app2
+```
+
+For running `a` this fails:
+
+```bash
+kcl run a -Y options.yaml
+```
+
+```
+/Users/sjuul
+{}
+```

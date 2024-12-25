@@ -1,3 +1,4 @@
+import file
 
 schema GenerateOptions:
     namespace: str
@@ -17,7 +18,8 @@ read_options = lambda {
    }
 }
 
-# Here preferably a condition that detects if the script is imported or ran directly
-{
-  **generate_resources(read_options())
-}
+print(file.modpath())
+if file.modpath().endswith("a"):
+    {
+      **generate_resources(read_options())
+    }
